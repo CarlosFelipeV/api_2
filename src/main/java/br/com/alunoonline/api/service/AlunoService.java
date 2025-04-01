@@ -14,4 +14,5 @@ public class AlunoService {
     public void criarAluno(Aluno aluno) {
         alunoRepository.save(aluno);
     }
+
 }
