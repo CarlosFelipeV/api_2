@@ -3,6 +3,7 @@ package br.com.alunoonline.api.service;
 import br.com.alunoonline.api.model.Aluno;
 import br.com.alunoonline.api.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,14 +20,15 @@ public class AlunoService {
     }
 
     public List<Aluno> listarTodosAlunos(){
-     return alunoRepository.findAll();
+        return alunoRepository.findAll();
     }
 
     public Optional<Aluno> buscarAlunoPorId(Long id){
         return alunoRepository.findById(id);
     }
 
-    public Optional<Aluno> deletarAlunoPorId(Long id) {
-        return alunoRepository.findById(id);
+    public ResponseEntity<String> deletarAlunoPorId(Long id) {
+        alunoRepository.findById(id);
+        return null;
     }
 }
