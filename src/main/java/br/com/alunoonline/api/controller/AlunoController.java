@@ -35,10 +35,9 @@ public class AlunoController {
         return alunoService.buscarAlunoPorId(id);
     }
 
-    @DeleteMapping(value = "delete")
-    @ResponseBody
-    public ResponseEntity<String> delete(@RequestParam Long id){
-        alunoService.deletarAlunoPorId(id);
-        return new ResponseEntity<String>("User deletado com sucesso", HttpStatus.OK);
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAlunoById(@PathVariable Long id){
+        alunoService.deleteAlunoById(id);
     }
 }
