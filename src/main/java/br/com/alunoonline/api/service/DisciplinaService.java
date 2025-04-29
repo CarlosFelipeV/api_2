@@ -34,27 +34,27 @@ public class DisciplinaService {
     }
 
     public void atualizarDisciplinaPorId(Long id, Disciplina disciplina) {
-        //PRIMEIRO PASSO: VER SER O PROFESSOR EXISTE NO BD
+        //PRIMEIRO PASSO: VER SER A DISCIPLINA EXISTE NO BD
         Optional<Disciplina> disiplinaDoBancoDeDados = buscarDisciplinaPorId(id);
 
-        //E SE NAO EXISTIR ESSE PROFESSOR?
+        //E SE NAO EXISTIR ESSA DISCIPLINA?
         if (disiplinaDoBancoDeDados.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Disciplina não encontrada no Banco de Dados");
         }
 
-        //SE CHEGAR AQUI, SIGNIFICA QUE EXISTE Professor COM ESSE ID
+        //SE CHEGAR AQUI, SIGNIFICA QUE EXISTE DISCIPLINA COM ESSE ID
         //VOU ARMAZENA-LO EM UMA VARIAVEL PARA DEPOIS EDITA-LO
         Disciplina disciplinaParaEditar = disiplinaDoBancoDeDados.get();
 
-        //COM ESSE PROFESSOR PARA SER EDITADO ACIMA, FAÇO
-        // OS SETS NECESSARIOS PARA ATUALIZAR OS ATRIBITOS DELE
+        //COM ESSA DISCIPLINA PARA SER EDITADA ACIMA, FAÇO
+        // OS SETS NECESSARIOS PARA ATUALIZAR OS ATRIBITOS DELA
         disciplinaParaEditar.setNome(disciplina.getNome());
         disciplinaParaEditar.setCargaHoraria(disciplina.getCargaHoraria());
         disciplinaParaEditar.setProfessor(disciplina.getProfessor());
 
-        //COM O PROFESSOR TOTALMENTE EDITADO ACIMA
-        // EU DEVOLVO ELE ATUALIZADO PARA O BD
+        //COM A DISCIPLINA TOTALMENTE EDITADA ACIMA
+        // EU DEVOLVO ELA ATUALIZADA PARA O BD
         disciplinaRepository.save(disciplinaParaEditar);
     }
 
