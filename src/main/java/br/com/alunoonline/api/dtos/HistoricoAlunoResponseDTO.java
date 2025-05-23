@@ -12,3 +12,4 @@ public class HistoricoAlunoResponseDTO {
     private List<DisciplinasAlunoResponseDTO> disciplinas;
 }
 
+

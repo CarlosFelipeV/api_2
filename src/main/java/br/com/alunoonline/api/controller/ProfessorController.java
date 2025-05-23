@@ -45,5 +45,5 @@ public class ProfessorController {
     public void atualizarProfessorPorId(@PathVariable Long id, @RequestBody Professor professor){
         professorService.atualizarProfessorPorId(id, professor);
     }
-
 }
+
