@@ -24,3 +24,4 @@ public class Disciplina {
     @JoinColumn(name = "professor_id")
     private Professor professor;
 }
+

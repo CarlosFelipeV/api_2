@@ -6,3 +6,4 @@ public enum MatriculaAlunoStatusEnum {
     REPROVADO,
     TRANCADO;
 }
+

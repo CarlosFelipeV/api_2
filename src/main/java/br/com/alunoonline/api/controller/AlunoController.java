@@ -94,5 +94,6 @@ public class AlunoController {
     })
     public void atualizarAlunoPorId(@PathVariable Long id, @RequestBody Aluno aluno){
         alunoService.atualizarAlunoPorId(id, aluno);
+
     }
 }

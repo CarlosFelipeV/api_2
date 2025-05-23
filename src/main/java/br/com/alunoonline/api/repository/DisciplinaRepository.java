@@ -10,3 +10,4 @@ import java.util.List;
 public interface DisciplinaRepository extends JpaRepository<Disciplina, Long> {
     List<Disciplina> findByProfessorId(Long professorId);
 }
+

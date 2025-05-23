@@ -33,3 +33,4 @@ public class MatriculaAluno {
     private MatriculaAlunoStatusEnum status;
 
 }
+

@@ -11,3 +11,4 @@ public class HistoricoAlunoResponseDTO {
     private String cpfAluno;
     private List<DisciplinasAlunoResponseDTO> disciplinas;
 }
+

@@ -115,3 +115,4 @@ public class MatriculaAlunoService {
         return (nota1 != null && nota2 != null) ? (nota1 + nota2) / QTD_NOTAS :null;
     }
 }
+
