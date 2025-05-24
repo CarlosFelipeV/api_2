@@ -21,8 +21,6 @@ public class AlunoController {
     @Autowired
     AlunoService alunoService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     @Operation(
             summary = "Criar um novo aluno",
             description = "Cria um novo aluno no sistema com os dados fornecidos no corpo da requisição"
@@ -32,12 +30,12 @@ public class AlunoController {
             @ApiResponse(responseCode = "400", description = "Dados inválidos fornecidos"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void criarAluno(@RequestBody Aluno aluno) {
         alunoService.criarAluno(aluno);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Listar todos os alunos",
             description = "Retorna uma lista com todos os alunos cadastrados no sistema"
@@ -46,12 +44,12 @@ public class AlunoController {
             @ApiResponse(responseCode = "200", description = "Lista de alunos retornada com sucesso"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<Aluno> listarTodosAlunos(){
         return alunoService.listarTodosAlunos();
     }
 
-    @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
     @Operation(
             summary = "Buscar aluno por ID",
             description = "Retorna os dados de um aluno com base no ID fornecido"
@@ -61,12 +59,12 @@ public class AlunoController {
             @ApiResponse(responseCode = "404", description = "Aluno não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Optional<Aluno> buscarAlunoPorId(@PathVariable Long id) {
         return alunoService.buscarAlunoPorId(id);
     }
 
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(
             summary = "Deletar aluno por ID",
             description = "Remove um aluno do sistema com base no ID fornecido"
@@ -76,12 +74,12 @@ public class AlunoController {
             @ApiResponse(responseCode = "404", description = "Aluno não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAlunoById(@PathVariable Long id){
         alunoService.deleteAlunoById(id);
     }
 
-    @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(
             summary = "Atualizar aluno por ID",
             description = "Atualiza os dados de um aluno existente com base no ID fornecido"
@@ -92,6 +90,8 @@ public class AlunoController {
             @ApiResponse(responseCode = "404", description = "Aluno não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizarAlunoPorId(@PathVariable Long id, @RequestBody Aluno aluno){
         alunoService.atualizarAlunoPorId(id, aluno);
     }
