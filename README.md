@@ -1,3 +1,23 @@
+# 📘 API Aluno Online
+
+A API Aluno Online foi uma aplicação desenvolvida para gerenciar alunos, professores, cursos e notas. Esse projeto foi feito em sala sendo ministrado pelo professor Kelson na disciplina de tecnologia para back-end.
+
+---
+
+## 🚀 Tecnologias
+
+- Java com Spring Boot.
+- Banco de dados: PostgreSQL.
+- Insominia.
+- Swagger para documentação da API.
+- Docker.
+
+---
+
+## 🖼️ Prints de Tela
+
+Abaixo estão alguns exemplos visuais do funcionamento da API, Insominia e DBeaver:
+
 <img width="954" alt="Image" src="https://github.com/user-attachments/assets/e1afb80b-12a6-4421-8480-0d6731129852" />
 
 <img width="720" alt="Image" src="https://github.com/user-attachments/assets/61f74146-40f3-46a9-bb76-a76853728fcd" />
