@@ -1,5 +1,6 @@
 package br.com.alunoonline.api.controller;
 
+import br.com.alunoonline.api.dtos.DadosCriacaoAlunoDTO;
 import br.com.alunoonline.api.model.Aluno;
 import br.com.alunoonline.api.service.AlunoService;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +33,8 @@ public class AlunoController {
     })
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void criarAluno(@RequestBody Aluno aluno) {
-        alunoService.criarAluno(aluno);
+    public void criarAluno(@RequestBody DadosCriacaoAlunoDTO dados) {
+        alunoService.criarAluno(dados);
     }
 
     @Operation(

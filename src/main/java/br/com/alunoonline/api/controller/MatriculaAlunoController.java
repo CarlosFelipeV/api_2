@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -73,6 +74,7 @@ public class MatriculaAlunoController {
     })
     @GetMapping("/emitir-historico/{alunoId}")
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN') or (hasRole('ALUNO') and @securityService.alunoPodeConsultarHistorico(authentication, #alunoId))")
     public HistoricoAlunoResponseDTO emitirHistorico(@PathVariable Long alunoId) {
         return matriculaAlunoService.emitirHistorico(alunoId);
     }
